@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "sf6";
+    src: local("Street Fighter 6");
+    font-weight: bold;
+}
+
+/* .line {
+    border-image-source: url("./icons/border.png");
+    border-image-slice: 0 0 27 0;
+    border-image-width: 1146px;
+    border-bottom: 3px solid;
+    margin-bottom: 6px;
+} */
+
+.separator {
+    background-image: url("./icons/border.png");
+    background-size: contain;
+    height: 7px;
+    margin-bottom: 4px;
+    margin-top: -2px;
+    margin-left: 28px;
+    background-repeat: no-repeat;
+}
+
+.icon {
+    margin: auto;
+    vertical-align: top;
+    width: 36px;
+    /* padding: 2px; */
+    padding-right: 9px;
+    -webkit-filter: drop-shadow(1px 1px 0 black)
+                drop-shadow(-1px 1px 0 black)
+                drop-shadow(1px -1px 0 black)
+                drop-shadow(-1px -1px 0 black);
+
+    filter: drop-shadow(1px 1px 0 black)
+            drop-shadow(-1px 1px 0 black)
+            drop-shadow(1px -1px 0 black)
+            drop-shadow(-1px -1px 0 black);
+}
+
+body {
+    background-color: transparent;
+    height: 100%;
+    overflow: hidden;
+}
+
+span {
+    margin: auto;
+    font-family: "sf6";
+    font-size: 36px;
+    /* padding: 2px; */
+    padding-top: 3px;
+    text-align: right;
+    width: 70px;
+    margin-right: 30px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
+}

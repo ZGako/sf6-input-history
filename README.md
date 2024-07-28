@@ -9,6 +9,7 @@ this is made using the javascript [gamepad API](https://developer.mozilla.org/en
 furthermore the **font used was sourced from https://x.com/ahmz1404/status/1667148859771097091** so big thanks to them
 
 ## Usage instructions
+0. If you don't have the font yet, install it from [here](https://www.mediafire.com/file/zl7pa9941begw5b/SF6_FONT_100.zip/file) or from the above mentioned twitter thread
 1. Go to a gamepad testing site like https://hardwaretester.com/gamepad
 2. Open the config.json file and change the "code" attributes to whatever number the gamepad website tells you. For any macro you don't use **PLEASE** set it to -1 or else something might break
 3. Close the config.json file and run the updateConfig.bat batch file. This will simply take the json and copy it into a hardcode javascript variable to avoid dealing with websockets etc. <sup><sub>(if you don't trust the batch file just google a tutorial and check out what it says yourself, it's only 3 lines anyways)</sub></sup>

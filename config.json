@@ -31,10 +31,6 @@
             "code": 4
         },
         {
-            "id": "parry",
-            "code": 5
-        },
-        {
             "id": "lk",
             "code": 0
         },
@@ -45,6 +41,10 @@
         {
             "id": "hk",
             "code": 6
+        },
+        {
+            "id": "parry",
+            "code": 5
         },
         {
             "id": "throw",

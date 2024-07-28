@@ -47,10 +47,8 @@ const lkmkCode = (buttonsConfig.find((element) => element.id == "lk+mk")).code;
 const mkhkCode = (buttonsConfig.find((element) => element.id == "mk+hk")).code;
 const lkhkCode = (buttonsConfig.find((element) => element.id == "lk+hk")).code;
 
-// console.log(directionMask);
 
 window.addEventListener("gamepadconnected", (evt) => {
-  // console.log(config);
   addgamepad(evt.gamepad);
 });
 window.addEventListener("gamepaddisconnected", (evt) => {
@@ -60,10 +58,6 @@ window.addEventListener("gamepaddisconnected", (evt) => {
 function addgamepad(gamepad) {
   const d = document.createElement("div");
   d.setAttribute("id", `controller${gamepad.index}`);
-
-  // const t = document.createElement("h1");
-  // t.textContent = `gamepad: ${gamepad.id}`;
-  // d.append(t);
 
   //initialize lines
 
@@ -264,9 +258,6 @@ function updateStatus() {
       }
     }
 
-    // const d = document.getElementById(`controller${gamepad.index}`);
-    // const buttonElements = d.getElementsByClassName("button");
-
     const lineContainer = document.getElementById('lineContainer');
     const lines = lineContainer.getElementsByClassName("line");
     const separator = lineContainer.getElementsByClassName("separator");
@@ -295,6 +286,32 @@ function updateStatus() {
             break;
           case kicksCode:
             inputNum = inputNum | lkCode;
+            inputNum = inputNum | mkCode;
+            inputNum = inputNum | hkCode;
+            break;
+
+          case lpmpCode:
+            inputNum = inputNum | lpCode;
+            inputNum = inputNum | mpCode;
+            break;
+          case lphpCode:
+            inputNum = inputNum | lpCode;
+            inputNum = inputNum | hpCode;
+            break;
+          case mphpCode:
+            inputNum = inputNum | mpCode;
+            inputNum = inputNum | hpCode;
+            break;
+
+            case lkmkCode:
+            inputNum = inputNum | lkCode;
+            inputNum = inputNum | mkCode;
+            break;
+          case lkhkCode:
+            inputNum = inputNum | lkCode;
+            inputNum = inputNum | hkCode;
+            break;
+          case mkhkCode:
             inputNum = inputNum | mkCode;
             inputNum = inputNum | hkCode;
             break;

@@ -1,16 +1,8 @@
 @font-face {
     font-family: "sf6";
-    src: local("Street Fighter 6");
+    src: local("Street Fighter 6"), local("calibri");
     font-weight: bold;
 }
-
-/* .line {
-    border-image-source: url("./icons/border.png");
-    border-image-slice: 0 0 27 0;
-    border-image-width: 1146px;
-    border-bottom: 3px solid;
-    margin-bottom: 6px;
-} */
 
 .separator {
     background-image: url("./icons/border.png");

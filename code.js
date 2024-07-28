@@ -1,6 +1,6 @@
+const EXPIRE_TIME = 1800; //in frames
 let loopstarted = false;
 const TOTAL_LINES = 19;
-const EXPIRE_TIME = 1800; //in frames
 var intervalId;
 var currentInput;
 var cycles = 0;

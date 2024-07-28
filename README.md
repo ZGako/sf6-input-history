@@ -29,8 +29,8 @@ If OBS automatically writes some Custom CSS, remove it if it messes with things
 3. Modify the number to be your desired interval, **in frames**. Consider that, same as the game, the overlay is running at 60fps
 
 Quick legend:
-60 = 1s
-300 = 5s
-600 = 10s
-1800 = 30s
-3600 = 1m
+* 60 = 1s
+* 300 = 5s
+* 600 = 10s
+* 1800 = 30s
+* 3600 = 1m

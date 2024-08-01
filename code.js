@@ -30,7 +30,7 @@ const directionMask = downCode | upCode | rightCode | leftCode;
 const dlCode = downCode | leftCode;
 const drCode = downCode | rightCode;
 const ulCode = upCode | leftCode;
-const urCode = upCode | leftCode;
+const urCode = upCode | rightCode;
 
 //setup macro codes
 const parryCode = (buttonsConfig.find((element) => element.id == "parry")).code;
@@ -150,10 +150,10 @@ function addgamepad(gamepad) {
 
       //ur
       const ur = document.createElement("img");
-      ur.setAttribute("src", "./icons/key-dl.png");
+      ur.setAttribute("src", "./icons/key-dr.png");
       ur.setAttribute("id", `key-ur-${i}`);
       ur.setAttribute("class", "icon");
-      ur.style.transform = "rotate(180deg)";
+      ur.style.transform = "rotate(-90deg)";
       ur.style.display = "none";
       line.append(ur);
     }

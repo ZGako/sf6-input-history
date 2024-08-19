@@ -17,8 +17,6 @@ const analogEnabled = analogConfig.enabled;
 const xAxisDeadzone = analogConfig.xAxisDeadzone;
 const yAxisDeadzone = analogConfig.yAxisDeadzone;
 
-console.log(xAxisDeadzone, yAxisDeadzone);
-
 //parse config codes
 const lpCode = Math.pow(2, (buttonsConfig.find((element) => element.id == "lp")).code);
 const mpCode = Math.pow(2, (buttonsConfig.find((element) => element.id == "mp")).code);

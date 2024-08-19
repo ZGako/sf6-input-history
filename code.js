@@ -9,8 +9,15 @@ var inputHistory = [];
 var cyclesHistory = [];
 var inputAge = [];
 
+const analogConfig = JSON.parse(config).analog;
 const buttonsConfig = JSON.parse(config).buttons;
 const directionsConfig = JSON.parse(config).directions;
+
+const analogEnabled = analogConfig.enabled;
+const xAxisDeadzone = analogConfig.xAxisDeadzone;
+const yAxisDeadzone = analogConfig.yAxisDeadzone;
+
+console.log(xAxisDeadzone, yAxisDeadzone);
 
 //parse config codes
 const lpCode = Math.pow(2, (buttonsConfig.find((element) => element.id == "lp")).code);
@@ -322,6 +329,48 @@ function updateStatus() {
       }
     }
 
+    //do analog buttons input
+    //for now I'll assume that the left joystick is used whilst leaving the DPAD enabled
+    if (analogEnabled == true) {
+      var xAxis = gamepad.axes[0];
+      var yAxis = gamepad.axes[1];
+
+      if (Math.abs(xAxis) < xAxisDeadzone) xAxis = 0;
+      if (Math.abs(yAxis) < yAxisDeadzone) yAxis = 0;
+
+      //find the angle and "map" it to a value from 0 to 7;
+      const angle = Math.atan2(yAxis, xAxis) / (Math.PI / 4);
+      Math.round(angle);
+      angle = angle % 8;
+      
+      switch(angle) {
+        case 0:
+          inputNum = inputNum | rightCode;
+          break;
+        case 1:
+          inputNum = inputNum | urCode;
+          break;
+        case 2:
+          inputNum = inputNum | upCode;
+          break;
+        case 3:
+          inputNum = inputNum | ulCode;
+          break;
+        case 4:
+          inputNum = inputNum | leftCode;
+          break;
+        case 5:
+          inputNum = inputNum | dlCode;
+          break;
+        case 6:
+          inputNum = inputNum | downCode;
+          break;
+        case 7:
+          inputNum = inputNum | drCode;
+          break;
+      }
+    }
+
     //once we've gotten the input do the rest
 
     if (currentInput != inputNum || expired) {
@@ -370,7 +419,6 @@ function updateStatus() {
           text.textContent = cyclesHistory[i - 1];
         }
         
-
         //directions 
         {
           const dl = document.getElementById(`key-dl-${i}`);
@@ -386,6 +434,18 @@ function updateStatus() {
 
           const direc = input & directionMask;
           const bools = [false, false, false, false, false, false, false, false, false];
+
+          //doing SOCD clearing in case of analog usage and/or bad gamepad
+          if (((direc & leftCode) == leftCode) && ((direc & rightCode) == rightCode)) {
+            //if both right and left are pressed at the same time the clear them
+            direc = direc & (!leftCode);
+            direc = direc & (!rightCode);
+          }
+          if (((direc & upCode) == upCode) && ((direc & downCode) == downCode)) {
+            //if both up and down are pressed at the same time the clear them
+            direc = direc & (!upCode);
+            direc = direc & (!downCode);
+          }
 
           switch (direc) {
             case dlCode:

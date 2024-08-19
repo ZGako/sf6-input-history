@@ -1,5 +1,10 @@
 let config='' + 
 '{' + 
+'    "analog": {' + 
+'        "enabled": true,' + 
+'        "xAxisDeadzone": 0.6,' + 
+'        "yAxisDeadzone": 0.6' + 
+'    },' + 
 '    "directions": [' + 
 '        {' + 
 '            "id": "down",' + 

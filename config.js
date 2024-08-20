@@ -2,8 +2,7 @@ let config='' +
 '{' + 
 '    "analog": {' + 
 '        "enabled": true,' + 
-'        "xAxisDeadzone": 0.6,' + 
-'        "yAxisDeadzone": 0.6' + 
+'        "deadzone": 0.4' + 
 '    },' + 
 '    "directions": [' + 
 '        {' + 

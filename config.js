@@ -1,8 +1,8 @@
 let config='' + 
 '{' + 
 '    "analog": {' + 
-'        "enabled": true,' + 
-'        "deadzone": 0.4' + 
+'        "enabled": false,' + 
+'        "deadzone": 0.3' + 
 '    },' + 
 '    "directions": [' + 
 '        {' + 

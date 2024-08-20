@@ -8,6 +8,7 @@ var cycles = 0;
 var inputHistory = [];
 var cyclesHistory = [];
 var inputAge = [];
+var usedCodes = [];
 
 const analogConfig = JSON.parse(config).analog;
 const buttonsConfig = JSON.parse(config).buttons;
@@ -15,6 +16,17 @@ const directionsConfig = JSON.parse(config).directions;
 
 const analogEnabled = analogConfig.enabled;
 const axisDeadzone = analogConfig.deadzone;
+
+//create usedCodes to ignore unmapped button presses
+directionsConfig.forEach(element => {
+  usedCodes.push(element.code);
+});
+
+buttonsConfig.forEach(element => {
+  usedCodes.push(element.code);
+});
+usedCodes.sort();
+while(usedCodes[0] < 0) usedCodes.shift();
 
 //parse config codes
 const lpCode = Math.pow(2, (buttonsConfig.find((element) => element.id == "lp")).code);
@@ -268,7 +280,9 @@ function updateStatus() {
 
     var inputNum = 0;
 
-    for (const [i, button] of gamepad.buttons.entries()) {
+    for (const i of usedCodes) {
+      button = gamepad.buttons[i];
+      
       if (button.pressed) {
         switch (i) {
           case throwCode:
@@ -340,8 +354,6 @@ function updateStatus() {
 
         angle = angle * 4 / Math.PI;
         angle = Math.round(angle) % 8;
-        
-        console.log(angle);
         
         switch(angle) {
           case 0:

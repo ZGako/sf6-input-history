@@ -281,6 +281,8 @@ function updateStatus() {
     var inputNum = 0;
 
     for (const i of usedCodes) {
+      //safeguard measure if codes aren't properly assigned
+      if(i >= gamepad.buttons.length) break;
       button = gamepad.buttons[i];
       
       if (button.pressed) {

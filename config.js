@@ -1,5 +1,9 @@
 let config='' + 
 '{' + 
+'    "analog": {' + 
+'        "enabled": false,' + 
+'        "deadzone": 0.3' + 
+'    },' + 
 '    "directions": [' + 
 '        {' + 
 '            "id": "down",' + 

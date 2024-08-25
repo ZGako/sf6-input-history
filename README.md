@@ -17,6 +17,17 @@ furthermore the **font used was sourced from https://x.com/ahmz1404/status/16671
 5. By default the input history is setup to delete an entry after 30s, if you want to change this follow the instructions in the [change entry expiration time](#Change-entry-expiration-time)
 6. Enjoy your working input history overlay
 
+## Further instructions if you use analog stick
+Using an analog joystick is supported, though only the left one.
+
+It is setup to work together with the d-pad and clear SOCD with it too (SOCD is cleared with the CPT SF6 requirements of up+down=neutral and left+right=neutral).
+
+To enable it follow the next steps:
+
+1. In the config file in the topmost "analog" section, set "enable": true
+2. Change the deadzone to your preference. The default is a random number I found to seem reasonable. Deadzone is setup to be circular from the center of the joystick.
+3. Continue from step 3 in the [previous section](#usage-instructions)
+
 ## OBS specific "optimizations"
 Inside the Properties tab there are two settings avaiable named *width* and *height*, for easier drag and dropping within your scene I would recommend setting these to:
 * width: 450
